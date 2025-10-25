@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизация | УРРЦОД | Вход в личный кабинет</title>
+  <meta name="description" content="Войдите в личный кабинет УРРЦОД. Безопасная авторизация для доступа к системе управления. Введите логин и пароль для входа в систему.">
+  <meta name="keywords" content="УРРЦОД, авторизация, вход, личный кабинет, логин, пароль, система управления">
+  <link rel="stylesheet" href=" {{url_for('static', filename='authorization.css') }} ">
+</head>
+<body>
+  <main class="main-container">
+    <header class="header-section">
+      <div class="logo-container">
+        <img src=" {{url_for('static', filename='img/favicon.svg') }} " alt="УРРЦОД логотип" class="logo-image">
+        <h1 class="logo-text">УРРЦОД</h1>
+      </div>
+    </header>
+    
+    <section class="content-section">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h2 class="auth-title">Авторизация</h2>
+          </div>
+          <p class="auth-subtitle">Введите логин и пароль для входа в личный кабинет</p>
+          
+          <form class="form-container" method="post" action="#" id="loginForm">
+            <div class="form-content">
+              <div class="form-fields">
+                <input 
+                  type="text" 
+                  class="input-field" 
+                  placeholder="Логин" 
+                  name="username" 
+                  required 
+                  autocomplete="username"
+                  aria-label="Логин"
+                  id="username"
+                >
+                <input 
+                  type="password" 
+                  class="input-field password-field" 
+                  placeholder="Пароль" 
+                  name="password" 
+                  required 
+                  autocomplete="current-password"
+                  aria-label="Пароль"
+                  id="password"
+                >
+              </div>
+              
+              <a href="/forgot-password" class="forgot-password">Забыли пароль?</a>
+            </div>
+            
+            <div class="button-wrapper">
+              <button type="submit" class="login-button-container" aria-label="Войти в систему">
+                <span class="login-button-text">Войти</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

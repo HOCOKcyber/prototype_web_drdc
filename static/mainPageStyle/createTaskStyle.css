@@ -1,0 +1,34 @@
+/* Форма */
+.make_task_form_decorator{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 27px;
+}
+
+.make_task_form_decorator label{
+    margin-bottom: 18px;
+}
+
+.make_task_form_decorator input,
+.make_task_form_decorator textarea,
+.make_task_form_decorator select{
+    border: 4px solid var(--dark-blue);
+    border-radius: 4px;
+    padding: 17px 11px;
+    background-color: var(--main-color);
+    min-width: 33%;
+}
+
+.make_task_form button{
+    border: none;
+    border-radius: 4px;
+    background-color: var(--submit-color);
+    flex: content;
+    padding: 10px 40px;
+    transition: background-color 0.2s;
+}
+
+.make_task_form button:hover{
+    background-color: var(--submit-color-hover)
+}

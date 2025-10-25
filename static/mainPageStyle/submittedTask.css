@@ -1,0 +1,58 @@
+/* Контейнер для карточек заявок */
+.requests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Стили для карточек */
+.request-card {
+    background-color: #6C93A7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Верхняя часть карточки */
+.request-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Бейдж категории */
+.category-badge {
+    background-color: #477891;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Бейдж этапа */
+.stage-badge {
+    background-color: #91AEBD;
+    color: #212529;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Информация о дате */
+.date-info {
+    margin-left: auto;
+    color: #212529;
+    font-size: 16px;
+}
+
+/* Секция комментария */
+.comment-section {
+    background-color: #C8D7DE;
+    border-radius: 6px;
+    padding: 15px;
+    color: #212529;
+    font-size: 16px;
+}

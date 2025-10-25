@@ -1,0 +1,42 @@
+{% extends "mainPage/templateMainPage.html" %}
+
+{% block head %}
+<link rel="stylesheet" href=" {{url_for('static', filename='mainPageStyle/submittedTask.css') }} ">
+<title>Отправленные заявки</title>
+{% endblock %}
+
+{% block content %}
+<section class="content">
+    <div class="requests-container">
+        <!-- Первая карточка -->
+        <div class="request-card">
+            <div class="request-top">
+                <div class="category-badge">Категория заявки</div>
+                <div class="stage-badge">Этап выполнения</div>
+                <div class="date-info">Дата завершения: ДД.ММ.ГГГГ</div>
+            </div>
+            <div class="comment-section">Комментарий</div>
+        </div>
+        
+        <!-- Вторая карточка -->
+        <div class="request-card">
+            <div class="request-top">
+                <div class="category-badge">Категория заявки</div>
+                <div class="stage-badge">На рассмотрении</div>
+                <div class="date-info">Дата завершения: -</div>
+            </div>
+            <div class="comment-section">Комментарий</div>
+        </div>
+        
+        <!-- Третья карточка -->
+        <div class="request-card">
+            <div class="request-top">
+                <div class="category-badge">Категория заявки</div>
+                <div class="stage-badge">Выполнена</div>
+                <div class="date-info">Дата завершения: 21.09.2025</div>
+            </div>
+            <div class="comment-section">Комментарий</div>
+        </div>
+    </div>
+</section>
+{% endblock %}

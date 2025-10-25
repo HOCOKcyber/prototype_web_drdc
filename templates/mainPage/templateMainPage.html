@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='normalize.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='mainPageStyle/mainPageStyle.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='site_navigation/site_navigation_style.css') }} ">
+    <meta charset="UTF-8">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="company_info">
+            <img src=" {{url_for('static', filename='img/favicon.svg') }} ">
+            УРРЦОД
+        </div>
+        <div class="user_info">
+            Имя пользователя
+            <img src=" {{url_for('static', filename='img/user_icon.svg') }}">
+        </div>
+    </header>
+    <div class="container">
+        
+        <nav id="site_navigation" class="close">
+            <ul>
+                <li>
+                    <button id="collapse_menu_btn">
+                        <img src=" {{url_for('static', filename='img/menu_icon.svg') }} ">
+                    </button>
+                </li>
+                <li>
+                    <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
+                        <img src=" {{url_for('static', filename='img/service_icon.svg') }} " alt="">
+                        <span>Серверное обслуживание</span>
+                    </div>
+                    <ul class="sub_menu">
+                        <div>
+                            <li>Поддержка сервисного обслуживания</li>
+                            <li>Информация об объектах</li>
+                        </div>
+                    </ul>
+                </li>
+            
+                <li>
+                    <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
+                        <img src=" {{url_for('static', filename='img/inventory_icon.svg') }} " alt="">
+                        <span>Инвентаризация</span>
+                    </div>
+                    <ul class="sub_menu">
+                        <div>
+                            <li>Поддержка сервисного обслуживания</li>
+                            <li>Информация об объектах</li>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
+                        <img src=" {{url_for('static', filename='img/monitor_icon.svg') }} " alt="">
+                        <span>Мониторинг</span>
+                    </div>
+                    <ul class="sub_menu">
+                        <div>
+                            <li>Поддержка сервисного обслуживания</li>
+                            <li>Информация об объектах</li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="fill_width">
+            <section class="search">
+                <form action="">
+                    <input type="text">
+                </form>
+            </section>
+            <nav class="content_navigation">
+                <ul class="flex_row">
+                    <li><a href="#">Текущие задачи</a></li>
+                    <li><a href="#">Выполненые задачи</a></li>
+                    <li><a href="/createTask" class="{% if request.path == '/createTask'%} active {% endif %} "}">Направить задачу</a></li>
+                    <li><a href="/submittedTask" class="{% if request.path == '/submittedTask'%} active {% endif %} "}">Отправленные заявки</a></li>
+                </ul>
+            </nav>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script src=" {{url_for('static', filename='site_navigation/site_navigation_script.js') }}"></script>
+</body>
