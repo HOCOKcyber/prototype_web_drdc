@@ -80,13 +80,15 @@
             </section>
             <nav class="content_navigation">
                 <ul class="flex_row">
-                    <li><a href="#">Текущие задачи</a></li>
+                    <li><a href="/currentTask" class="{% if request.path == '/currentTask'%} active {% endif %} ">Текущие задачи</a></li>
                     <li><a href="#">Выполненые задачи</a></li>
                     <li><a href="/createTask" class="{% if request.path == '/createTask'%} active {% endif %} "}">Направить задачу</a></li>
                     <li><a href="/submittedTask" class="{% if request.path == '/submittedTask'%} active {% endif %} "}">Отправленные заявки</a></li>
                 </ul>
             </nav>
-            {% block content %}{% endblock %}
+            <section class="content">
+                {% block content %}{% endblock %}
+            </section>
         </main>
     </div>
 

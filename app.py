@@ -10,6 +10,10 @@ def createTask():
 def submittedTask():
     return render_template("mainPage/submittedTask.html")
 
+@app.route("/currentTask")
+def currentTask():
+    return render_template("mainPage/currentTask.html")
+
 @app.get("/")
 def authorization():
     return render_template("authorizationPage.html")

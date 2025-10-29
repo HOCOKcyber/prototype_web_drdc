@@ -5,7 +5,6 @@
     width: 350px;
     overflow: hidden;
     transition: .2s;
-
     /* Чтобы приклеить */
     height: 100vh;
     position: sticky;

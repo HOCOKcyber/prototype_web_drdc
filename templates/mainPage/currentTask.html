@@ -1,0 +1,19 @@
+{% extends "mainPage/templateMainPage.html" %}
+
+{% block head %}
+<link rel="stylesheet" href=" {{url_for('static', filename='mainPageStyle/currentTaskStyle.css') }} ">
+<title>Текущие задачи</title>
+{% endblock %}
+
+{% block content %}
+    {% for i in range(1, 6) %}
+    <div class="task">
+        <h2 class="task_header">Задача {{ i }}</h2>
+        <div class="task_body">
+            <span class="task_sender">Отправитель: имя пользователя</span>
+            <span class="task_content">Содержание задачи</span>
+            <span class="task_deadline">Срок сдачи: дата</span>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

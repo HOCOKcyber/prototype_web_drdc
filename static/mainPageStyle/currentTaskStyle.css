@@ -1,0 +1,63 @@
+*{
+    --bg-task: #6C93A7;
+    --bg-deadline: #DBAB9F;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-content : start;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.task{
+    box-sizing: border-box;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    background-color: var(--dark-blue);
+    max-width: 600px;
+    min-width: 350px;
+    width: 350px;
+}
+
+.task .task_header{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0px;
+    padding: 15px;
+}
+
+.task .task_body{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--bg-task);
+    padding: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.task .task_body .task_sender,
+.task .task_body .task_content,
+.task .task_body .task_deadline{
+    padding: 5px 11px;
+    border-radius: 5px;
+    text-align: start;
+    color: black;
+}
+
+.task .task_body .task_sender{
+    background-color: var(--main-color);
+}
+
+.task .task_body .task_content{
+    background-color: var(--ligth-blue);
+    min-height: 150px;
+}
+
+.task .task_body .task_deadline{
+    background-color: var(--bg-deadline);
+}
