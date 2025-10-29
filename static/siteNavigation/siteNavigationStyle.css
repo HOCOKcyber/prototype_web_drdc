@@ -2,9 +2,9 @@
     box-sizing: border-box;
     padding: 10px;
     background-color: var(--main-color);
-    width: 320px;
+    width: 350px;
     overflow: hidden;
-    transition: .3s;
+    transition: .2s;
 
     /* Чтобы приклеить */
     height: 100vh;
@@ -60,6 +60,16 @@
     border-bottom-right-radius: 0px;
 }
 
+/* Класс для прокрутки кнопки */
+.sub_menu_btn img[src*="arrowIcon"] {
+    margin-left: auto;
+    transition: 0.5s;
+}
+
+#site_navigation .rotate{
+    transform: rotate(-180deg); 
+}
+
 /* Класс для закртытого sidebar */
 #site_navigation.close{
     width: 65px;
@@ -70,7 +80,7 @@
 #site_navigation .sub_menu{
     display: grid;
     grid-template-rows: 0fr;
-    transition: 0.3s;
+    transition: 0.4s;
 
     > div{
         overflow: hidden;

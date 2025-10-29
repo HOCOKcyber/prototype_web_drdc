@@ -20,4 +20,8 @@ function navToggleSubMenu(button){
     if (sidebar.classList.contains("close")){
         sidebar.classList.toggle("close")
     }
+
+    // Для поворота стрелки
+    childrens = button.children
+    childrens[childrens.length-1].classList.toggle("rotate")
 }
