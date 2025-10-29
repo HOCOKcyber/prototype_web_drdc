@@ -6,33 +6,31 @@
 {% endblock %}
 
 {% block content %}
-<section class="content">
-    <form action="" class="make_task_form">
-        <div class="make_task_form_decorator">
-            <label for="task_name">Название задачи:</label>
-            <input type="text" id="task_name" name="name" placeholder="Введите название задачи">
-        </div>    
+<form action="" class="make_task_form">
+    <div class="make_task_form_decorator">
+        <label for="task_name">Название задачи:</label>
+        <input type="text" id="task_name" name="name" placeholder="Введите название задачи">
+    </div>    
 
-        <div class="make_task_form_decorator">
-            <label for="task_description">Описание задачи:</label>
-            <textarea type="text" id="task_description" name="description" placeholder="Опишите задачу" rows="5" cols="50"></textarea>   
-        </div>
-        
-        <div class="make_task_form_decorator">
-            <label for="task_executor">Кому отправить:</label>
-            <select id="task_executor" name="executor">
-                <option value="1">Вариант 1</option>
-                <option value="2">Вариант 2</option>
-                <option value="3">Вариант 3</option>
-            </select>
-        </div>
-        
-        <div class="make_task_form_decorator">
-            <label for="task_deadline">Срок выполнения:</label>
-            <input type="date" id="task_deadline" name="deadline">
-        </div>
+    <div class="make_task_form_decorator">
+        <label for="task_description">Описание задачи:</label>
+        <textarea type="text" id="task_description" name="description" placeholder="Опишите задачу" rows="5" cols="50"></textarea>   
+    </div>
+    
+    <div class="make_task_form_decorator">
+        <label for="task_executor">Кому отправить:</label>
+        <select id="task_executor" name="executor">
+            <option value="1">Вариант 1</option>
+            <option value="2">Вариант 2</option>
+            <option value="3">Вариант 3</option>
+        </select>
+    </div>
+    
+    <div class="make_task_form_decorator">
+        <label for="task_deadline">Срок выполнения:</label>
+        <input type="date" id="task_deadline" name="deadline">
+    </div>
 
-        <button type="submit">Отправить</button>
-    </form>
-</section>
+    <button type="submit">Отправить</button>
+</form>
 {% endblock %}
