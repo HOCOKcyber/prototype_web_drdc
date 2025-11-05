@@ -1,41 +1,26 @@
-<!DOCTYPE html>
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href=" {{ url_for('static', filename='normalize.css') }} ">
-    <link rel="stylesheet" href=" {{ url_for('static', filename='mainPageStyle/mainPageStyle.css') }} ">
-    <!-- Стили для навигации по сайту -->
-    <link rel="stylesheet" href=" {{ url_for('static', filename='siteNavigation/siteNavigationStyle.css') }} "> 
-    <meta charset="UTF-8">
-    <!-- Для внедрения стилей в реализующих страницах -->
-    {% block head %}{% endblock %}
-</head>
-<body>
-    <!-- Для header -->
-    {% include './core/header.html' %}
-    <div class="container">
-        <!-- Для навигации по всему сайту -->
-        {% include './core/siteNavigation.html' %}
-        <main class="fill_width">
-            <section class="search">
-                <form action="">
-                    <input type="text">
-                </form>
-            </section>
-            <nav class="content_navigation">
-                <ul class="flex_row">
-                    <li><a href="/currentTask" class="{% if request.path == '/currentTask'%} active {% endif %} ">Текущие задачи</a></li>
-                    <li><a href="#">Выполненые задачи</a></li>
-                    <li><a href="/createTask" class="{% if request.path == '/createTask'%} active {% endif %} "}">Направить задачу</a></li>
-                    <li><a href="/submittedTask" class="{% if request.path == '/submittedTask'%} active {% endif %} "}">Отправленные заявки</a></li>
-                </ul>
-            </nav>
-            <section class="content">
-                {% block content %}{% endblock %}
-            </section>
-        </main>
-    </div>
+{% extends "./core/generalTemplate.html" %}
 
-    <script src=" {{url_for('static', filename='siteNavigation/siteNavigationScript.js') }}"></script>
-</body>
+{% block generalHead %}
+<link rel="stylesheet" href=" {{ url_for('static', filename='./mainPageStyle/mainPageStyle.css') }} "> 
+<!-- Для дальнейших стилей -->
+{% block head %}{% endblock %}
+{% endblock %}
+
+{% block generalContent %}
+<section class="search">
+    <form action="">
+        <input type="text">
+    </form>
+</section>
+<nav class="content_navigation">
+    <ul class="flex_row">
+        <li><a href="/currentTask" class="{% if request.path == '/currentTask'%} active {% endif %} ">Текущие задачи</a></li>
+        <li><a href="#">Выполненые задачи</a></li>
+        <li><a href="/createTask" class="{% if request.path == '/createTask'%} active {% endif %} "}">Направить задачу</a></li>
+        <li><a href="/submittedTask" class="{% if request.path == '/submittedTask'%} active {% endif %} "}">Отправленные заявки</a></li>
+    </ul>
+</nav>
+<section class="content">
+    {% block content %}{% endblock %}
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='normalize.css') }} ">
+    <!-- Стили для навигации по сайту -->
+    <link rel="stylesheet" href=" {{ url_for('static', filename='siteNavigation/siteNavigationStyle.css') }} "> 
+    <meta charset="UTF-8">
+    <!-- Для внедрения стилей в реализующих страницах -->
+    {% block generalHead %}{% endblock %}
+</head>
+<body>
+    <!-- Для header -->
+    {% include './core/header.html' %}
+    <div class="container">
+        <!-- Для навигации по всему сайту -->
+        {% include './core/siteNavigation.html' %}
+        <main class="fill_width">
+            {% block generalContent %} {% endblock %} 
+        </main>
+    </div>
+
+    <script src=" {{url_for('static', filename='siteNavigation/siteNavigationScript.js') }}"></script>
+</body>
