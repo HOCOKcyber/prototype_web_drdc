@@ -1,0 +1,18 @@
+{% extends "./core/generalTemplate.html" %}
+
+{% block generalHead %}
+<link rel="stylesheet" href=" {{ url_for('static', filename='./serviceStyle/servicePageStyle.css') }} ">
+<!-- Для дальнейших стилей -->
+{% block head %}{% endblock %}
+{% endblock %}
+
+{% block generalContent %}
+<nav class="content_navigation">
+    <ul class="flex_row">
+        
+    </ul>
+</nav>
+<section class="content">
+    {% block content %}{% endblock %}
+</section>
+{% endblock %}

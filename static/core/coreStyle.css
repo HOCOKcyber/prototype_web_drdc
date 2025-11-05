@@ -1,0 +1,21 @@
+* {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+
+  --ligth-blue: #C8D7DE;
+  --main-color: #A3BCC8;
+  --dark-blue: #477891;
+  --submit-color: #CE8D7D;
+  --submit-color-hover: #feb3a0;
+  --expanded-list: #7398AB;
+
+  box-sizing: border-box;
+}
+
+/* Разделение страницы на sidebar и main */
+.container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}

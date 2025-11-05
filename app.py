@@ -2,6 +2,8 @@ from flask import Flask,render_template, redirect, request
 
 app = Flask(__name__)
 
+
+# Главная страница
 @app.route("/createTask")
 def createTask():
     return render_template("mainPage/createTaskPage.html")
@@ -40,3 +42,8 @@ def passwordRecovery():
 def validPassword(name, password):
     # TODO("Релизовать авторизацию и скорее всего как-то это вынести")
     return True
+
+# Сервисное обслуживание
+@app.route("/service")
+def servicePage():
+    return render_template("servicePage/templateServicePage.html")
