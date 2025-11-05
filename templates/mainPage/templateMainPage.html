@@ -5,73 +5,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href=" {{ url_for('static', filename='normalize.css') }} ">
     <link rel="stylesheet" href=" {{ url_for('static', filename='mainPageStyle/mainPageStyle.css') }} ">
-    <link rel="stylesheet" href=" {{ url_for('static', filename='siteNavigation/siteNavigationStyle.css') }} ">
+    <!-- Стили для навигации по сайту -->
+    <link rel="stylesheet" href=" {{ url_for('static', filename='siteNavigation/siteNavigationStyle.css') }} "> 
     <meta charset="UTF-8">
+    <!-- Для внедрения стилей в реализующих страницах -->
     {% block head %}{% endblock %}
 </head>
 <body>
-    <header>
-        <div class="company_info">
-            <img src=" {{url_for('static', filename='img/favicon.svg') }} ">
-            УРРЦОД
-        </div>
-        <div class="user_info">
-            Имя пользователя
-            <img src=" {{url_for('static', filename='img/userIcon.svg') }}">
-        </div>
-    </header>
+    <!-- Для header -->
+    {% include './core/header.html' %}
     <div class="container">
-        
-        <nav id="site_navigation" class="close">
-            <ul>
-                <li>
-                    <button id="collapse_menu_btn">
-                        <img src=" {{url_for('static', filename='img/menuIcon.svg') }} ">
-                    </button>
-                </li>
-                <li>
-                    <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
-                        <img src=" {{url_for('static', filename='img/serviceIcon.svg') }} " alt="">
-                        <span>Серверное обслуживание</span>
-                        <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
-                    </div>
-                    <ul class="sub_menu">
-                        <div>
-                            <li>Поддержка сервисного обслуживания</li>
-                            <li>Информация об объектах</li>
-                        </div>
-                    </ul>
-                </li>
-            
-                <li>
-                    <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
-                        <img src=" {{url_for('static', filename='img/inventoryIcon.svg') }} " alt="">
-                        <span>Инвентаризация</span>
-                        <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
-                    </div>
-                    <ul class="sub_menu">
-                        <div>
-                            <li>Поддержка сервисного обслуживания</li>
-                            <li>Информация об объектах</li>
-                        </div>
-                    </ul>
-                </li>
-                <li>
-                    <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
-                        <img src=" {{url_for('static', filename='img/monitorIcon.svg') }} " alt="">
-                        <span>Мониторинг</span>
-                        <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
-                    </div>
-                    <ul class="sub_menu">
-                        <div>
-                            <li>Поддержка сервисного обслуживания</li>
-                            <li>Информация об объектах</li>
-                        </div>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-
+        <!-- Для навигации по всему сайту -->
+        {% include './core/siteNavigation.html' %}
         <main class="fill_width">
             <section class="search">
                 <form action="">

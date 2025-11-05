@@ -1,0 +1,49 @@
+<nav id="site_navigation" class="close">
+    <ul>
+        <li>
+            <button id="collapse_menu_btn">
+                <img src=" {{url_for('static', filename='img/menuIcon.svg') }} ">
+            </button>
+        </li>
+        <li>
+            <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
+                <img src=" {{url_for('static', filename='img/serviceIcon.svg') }} " alt="">
+                <span>Серверное обслуживание</span>
+                <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+            </div>
+            <ul class="sub_menu">
+                <div>
+                    <li>Поддержка сервисного обслуживания</li>
+                    <li>Информация об объектах</li>
+                </div>
+            </ul>
+        </li>
+    
+        <li>
+            <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
+                <img src=" {{url_for('static', filename='img/inventoryIcon.svg') }} " alt="">
+                <span>Инвентаризация</span>
+                <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+            </div>
+            <ul class="sub_menu">
+                <div>
+                    <li>Поддержка сервисного обслуживания</li>
+                    <li>Информация об объектах</li>
+                </div>
+            </ul>
+        </li>
+        <li>
+            <div onclick=navToggleSubMenu(this) class="sub_menu_btn">
+                <img src=" {{url_for('static', filename='img/monitorIcon.svg') }} " alt="">
+                <span>Мониторинг</span>
+                <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+            </div>
+            <ul class="sub_menu">
+                <div>
+                    <li>Поддержка сервисного обслуживания</li>
+                    <li>Информация об объектах</li>
+                </div>
+            </ul>
+        </li>
+    </ul>
+</nav>
