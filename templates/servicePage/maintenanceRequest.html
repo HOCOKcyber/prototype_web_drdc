@@ -1,0 +1,28 @@
+{% extends "servicePage/templateServicePage.html" %}
+
+
+{% block head %}
+<link rel="stylesheet" href=" {{ url_for('static', filename='serviceStyle/maintenanceRequest.css') }} ">
+{% endblock %}
+
+{% block content %}
+<form method="post" >
+    <div>
+        <label for="category" >Категория заявки: </label>
+        <select name="category">
+            <option value="1">Категория 1</option>
+            <option value="2">Категория 2</option>
+            <option value="2">Категория 2</option>
+        </select>
+    </div>
+    <div>
+        <label for="decription">Описание требований к работе:</label>
+        <textarea name="decription" placeholder="Опишите требования..." rows="5" cols="33"></textarea>
+    </div>
+    <div>
+        <label for="fileUpload">Прикрепить файл:</label>
+        <input type="file" id="fileUpload" name="fileUpload" multiple />
+    </div>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

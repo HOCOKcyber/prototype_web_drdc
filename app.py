@@ -47,3 +47,8 @@ def validPassword(name, password):
 @app.route("/service")
 def servicePage():
     return render_template("servicePage/templateServicePage.html")
+
+# Сервисное обслуживание
+@app.route("/service/maintenanceRequest")
+def maintenanceRequestPage():
+    return render_template("servicePage/maintenanceRequest.html")

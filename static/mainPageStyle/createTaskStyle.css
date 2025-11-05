@@ -23,12 +23,12 @@
 .make_task_form button{
     border: none;
     border-radius: 4px;
-    background-color: var(--submit-color);
+    background-color: var(--clickable-color);
     flex: content;
     padding: 10px 40px;
     transition: background-color 0.2s;
 }
 
 .make_task_form button:hover{
-    background-color: var(--submit-color-hover)
+    background-color: var(--clickable-color-hover)
 }

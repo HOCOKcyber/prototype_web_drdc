@@ -7,8 +7,8 @@
   --ligth-blue: #C8D7DE;
   --main-color: #A3BCC8;
   --dark-blue: #477891;
-  --submit-color: #CE8D7D;
-  --submit-color-hover: #feb3a0;
+  --clickable-color: #CE8D7D;
+  --clickable-color-hover: #C2715C;
   --expanded-list: #7398AB;
 
   box-sizing: border-box;
