@@ -29,7 +29,7 @@ def verification():
     app.logger.debug(f'password: {password}')
     
     if validPassword(name, password):
-        return redirect("/createTask")
+        return redirect("/currentTask")
 
     return render_template("authorizationPage.html")
 
@@ -44,11 +44,11 @@ def validPassword(name, password):
     return True
 
 # Сервисное обслуживание
-@app.route("/service")
+@app.route("/service/support")
 def servicePage():
     return render_template("servicePage/templateServicePage.html")
 
 # Сервисное обслуживание
-@app.route("/service/maintenanceRequest")
+@app.route("/service/support/maintenanceRequest")
 def maintenanceRequestPage():
     return render_template("servicePage/maintenanceRequest.html")

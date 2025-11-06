@@ -12,7 +12,7 @@
     align-self: start;
 }
 
-/* Сброс стилей + установка размеров для картинок */
+/* Сброс стилей */
 #site_navigation ul {
     list-style: none;
     padding-left: 0;
@@ -28,9 +28,8 @@
     cursor: pointer;
 }
 
-#collapse_menu_btn img {
-    width: 35px;
-    height: 35px;
+#site_navigation svg {
+    flex-shrink: 0;
 }
 
 /* Расстояние между кнопками */
@@ -94,11 +93,13 @@
 }
 
 /* Дизайн dropdown */
-#site_navigation .sub_menu li{
+#site_navigation .sub_menu li,
+#site_navigation .sub_menu a{
     white-space: nowrap;
     color: white;
     font-size: 14px;
-    padding: 0;    
+    padding: 0;
+    text-decoration: none;    
 }
 
 #site_navigation .sub_menu li{
@@ -108,4 +109,19 @@
 
 #site_navigation .sub_menu li:first-child{
     margin-top: 16px;
+}
+
+/* Стлити для svg и bg если пользователь находиться на нужной секции */
+#site_navigation svg.active{
+    fill: white;
+}
+
+#site_navigation .sub_menu_btn.active{
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+/* На нужной странице */
+#site_navigation .sub_menu .active{
+    text-decoration: underline;
 }

@@ -87,3 +87,8 @@
 #content_navigation .rotate{
     transform: rotate(-180deg);
 }
+
+/* Если пользователь на нужной странице */
+#content_navigation .sub_menu .active{
+    text-decoration: underline;
+}
