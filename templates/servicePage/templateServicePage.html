@@ -1,21 +1,53 @@
 {% extends "./core/generalTemplate.html" %}
 
 {% block generalHead %}
-<link rel="stylesheet" href=" {{ url_for('static', filename='serviceStyle/servicePageStyle.css') }} ">
+<link rel="stylesheet" href=" {{ url_for('static', filename='servicePage/servicePageStyle.css') }} ">
+<link rel="stylesheet" href=" {{ url_for('static', filename='servicePage/contentNavigation/contentNavigationStyle.css') }} ">
 <!-- Для дальнейших стилей -->
 {% block head %}{% endblock %}
 {% endblock %}
 
 {% block generalContent %}
-<nav class="content_navigation">
+<nav id="content_navigation">
     <ul class="flex_row">
-        <li>Управление <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate"></li>
-        <li>Обработка заявок <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate"></li>
-        <li>Оповещение <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate"></li>
-        <li>Объекты РРЦОД и гос. ИС <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate"></li>
+        <li class="menu_item">
+            <div onclick=navToggleSubMenuContent(this) class="sub_menu_btn">
+                <span>Управление</span>
+                <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+            </div>
+            <ul class="sub_menu">
+                <li><a href="#">Заявка на обслуживание</a></li>
+                <li><a href="#">Заявка об инциденте </a></li>
+                <li><a href="#">Расписание работ</a></li>
+                <li><a href="#">Результаты мониторинга</a></li>
+                <li><a href="#">Управление доступом</a></li>
+            </ul>
+        </li>
+        <li class="menu_item">
+            <div onclick=navToggleSubMenuContent(this) class="sub_menu_btn">
+                <span>Обработка заявок</span>
+                
+                    <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+                
+            </div>
+        </li>
+        <li class="menu_item">
+            <div onclick=navToggleSubMenuContent(this) class="sub_menu_btn">
+                <span>Оповещение</span>
+                <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+            </div>
+        </li>
+        <li class="menu_item">
+            <div onclick=navToggleSubMenuContent(this) class="sub_menu_btn">
+                <span>Объекты РРЦОД и гос. ИС</span>
+                <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
+            </div>
+        </li>
     </ul>
 </nav>
 <section class="content">
     {% block content %}{% endblock %}
 </section>
+
+<script src=" {{url_for('static', filename='servicePage/contentNavigation/serviceContentNavigation.js') }}"></script>
 {% endblock %}

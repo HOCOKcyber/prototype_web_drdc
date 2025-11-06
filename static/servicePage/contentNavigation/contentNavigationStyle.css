@@ -1,0 +1,89 @@
+#content_navigation{
+    background-color: var(--dark-blue);
+    border: 3px solid black;
+}
+
+#content_navigation > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    color: white;
+    margin: 0px;
+}
+
+#content_navigation > ul .menu_item{
+    /* Для позиционирования sub-menu */
+    position: relative;
+}
+
+#content_navigation img{
+    transform-origin: center;
+}
+
+/* Sub menu */
+#content_navigation .sub_menu_btn{    
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    white-space: nowrap;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    transition: all 0.3s;
+
+    /* Для вмешения контента sub_menu */
+    padding: 8px 30px;
+}
+
+#content_navigation .sub_menu{
+    width: 100%;
+    background-color: var(--expanded-list);
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    white-space: nowrap;
+    list-style-type: none;
+    padding: 8px 0px;
+
+    /* Для удаления с экрана */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    
+    /* Для позиционирования относительно menu_item */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#content_navigation .sub_menu li{
+    padding-bottom: 8px;
+}
+
+#content_navigation .sub_menu a{
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    padding-left: 11px;
+}
+
+/* Для анимации */
+#content_navigation .sub_menu.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+#content_navigation .sub_menu_btn.isShow{
+    color: var(--dark-blue);
+    text-decoration: underline;
+    background-color: var(--ligth-blue);
+}
+
+#content_navigation .rotate{
+    transform: rotate(-180deg);
+}
