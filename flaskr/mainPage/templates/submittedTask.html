@@ -1,7 +1,7 @@
-{% extends "mainPage/templateMainPage.html" %}
+{% extends "templateMainPage.html" %}
 
 {% block head %}
-<link rel="stylesheet" href=" {{url_for('static', filename='mainPageStyle/submittedTask.css') }} ">
+<link rel="stylesheet" href=" {{url_for('mainPage.static', filename='submittedTask.css') }} ">
 <title>Отправленные заявки</title>
 {% endblock %}
 

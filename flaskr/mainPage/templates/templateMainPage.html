@@ -1,0 +1,26 @@
+{% extends "generalTemplate.html" %}
+
+{% block generalHead %}
+<link rel="stylesheet" href=" {{ url_for('mainPage.static', filename='mainPageStyle.css') }} "> 
+<!-- Для дальнейших стилей -->
+{% block head %}{% endblock %}
+{% endblock %}
+
+{% block generalContent %}
+<section class="search">
+    <form action="">
+        <input type="text">
+    </form>
+</section>
+<nav class="content_navigation">
+    <ul class="flex_row">
+        <li><a href="{{ url_for('mainPage.currentTask') }}" class="{% if request.endpoint == 'mainPage.currentTask' %}active{% endif %}">Текущие задачи</a></li>
+        <li><a href="#">Выполненые задачи</a></li>
+        <li><a href="{{ url_for('mainPage.createTask') }}" class="{% if request.endpoint == 'mainPage.createTask' %}active{% endif %}">Направить задачу</a></li>
+        <li><a href="{{ url_for('mainPage.submittedTask') }}" class="{% if request.endpoint == 'mainPage.submittedTask' %}active{% endif %}">Отправленные заявки</a></li>
+    </ul>
+</nav>
+<section class="content">
+    {% block content %}{% endblock %}
+</section>
+{% endblock %}

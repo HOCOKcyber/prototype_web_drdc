@@ -5,8 +5,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href=" {{ url_for('static', filename='normalize.css') }} ">
     <!-- Стили для навигации по сайту -->
-    <link rel="stylesheet" href=" {{ url_for('static', filename='./core/coreStyle.css') }} ">
-    <link rel="stylesheet" href=" {{ url_for('static', filename='./core/headerStyle.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='coreStyle.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='headerStyle.css') }} ">
     <link rel="stylesheet" href=" {{ url_for('static', filename='siteNavigation/siteNavigationStyle.css') }} "> 
     <meta charset="UTF-8">
     <!-- Для внедрения стилей в реализующих страницах -->
@@ -14,10 +14,10 @@
 </head>
 <body>
     <!-- Для header -->
-    {% include './core/header.html' %}
+    {% include 'header.html' %}
     <div class="container">
         <!-- Для навигации по всему сайту -->
-        {% include './core/siteNavigation.html' %}
+        {% include 'siteNavigation.html' %}
         <main class="fill_width">
             {% block generalContent %} {% endblock %} 
         </main>
