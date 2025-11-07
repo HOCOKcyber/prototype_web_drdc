@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,redirect,url_for
 
 def create_app():
     app = Flask(__name__,
@@ -11,5 +11,9 @@ def create_app():
     app.register_blueprint(authorizationBp)
     app.register_blueprint(mainPageBp)
     app.register_blueprint(servicePageBp)
+
+    @app.route("/")
+    def toLoginPage():
+        return redirect(url_for("authorization.login"))
 
     return app
