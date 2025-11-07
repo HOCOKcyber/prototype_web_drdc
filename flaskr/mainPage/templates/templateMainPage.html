@@ -9,7 +9,7 @@
 {% block generalContent %}
 <section class="search">
     <form action="">
-        <input type="text">
+        <input type="text" style="--search-icon: url('{{ url_for('static', filename='img/searchIcon.svg') }}');">
     </form>
 </section>
 <nav class="content_navigation">
@@ -20,7 +20,7 @@
         <li><a href="{{ url_for('mainPage.submittedTask') }}" class="{% if request.endpoint == 'mainPage.submittedTask' %}active{% endif %}">Отправленные заявки</a></li>
     </ul>
 </nav>
-<section class="content">
+<section class="content" style="--bg-image: url('{{ url_for('static', filename='img/bg.svg') }}');">
     {% block content %}{% endblock %}
 </section>
 {% endblock %}

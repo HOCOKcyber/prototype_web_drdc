@@ -45,7 +45,7 @@
         </li>
     </ul>
 </nav>
-<section class="content">
+<section class="content" style="--bg-image: url('{{ url_for('static', filename='img/bg.svg') }}');">
     {% block content %}{% endblock %}
 </section>
 
