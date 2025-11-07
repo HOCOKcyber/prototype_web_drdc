@@ -33,7 +33,7 @@
             </div>
             <ul class="sub_menu">
                 <div>
-                    <li><a href="/service/support" class="{% if '/service/support' in request.path %}active{% endif %}">Поддержка сервисного обслуживания</a></li>
+                    <li><a href="{{ url_for('servicePage.servicePage') }}" class="{% if '/service/support' in request.path %}active{% endif %}">Поддержка сервисного обслуживания</a></li>
                     <li>Информация об объектах</li>
                 </div>
             </ul>

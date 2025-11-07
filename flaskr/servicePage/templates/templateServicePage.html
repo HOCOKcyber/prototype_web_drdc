@@ -16,7 +16,7 @@
                 <img src=" {{url_for('static', filename='img/arrowIcon.svg') }} " class="rotate">
             </div>
             <ul class="sub_menu">
-                <li><a href="/service/support/maintenanceRequest" class="{% if 'maintenanceRequest' in request.path %}active{% endif %}">Заявка на обслуживание</a></li>
+                <li><a href="{{ url_for('servicePage.maintenanceRequestPage')}}" class="{% if 'maintenanceRequest' in request.path %}active{% endif %}">Заявка на обслуживание</a></li>
                 <li><a href="#">Заявка об инциденте </a></li>
                 <li><a href="#">Расписание работ</a></li>
                 <li><a href="#">Результаты мониторинга</a></li>
