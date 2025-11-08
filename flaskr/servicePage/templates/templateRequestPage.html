@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block content %}
-<form method="post" >
+<form method="post">
     <div>
-        <label for="category" >Категория заявки: </label>
+        <label for="category" >{{ info.categoryTitle }}: </label>
         <select name="category">
             <option value="1">Категория 1</option>
             <option value="2">Категория 2</option>
@@ -16,8 +16,8 @@
         </select>
     </div>
     <div>
-        <label for="decription">Описание требований к работе:</label>
-        <textarea name="decription" placeholder="Опишите требования..." rows="5" cols="33"></textarea>
+        <label for="decription">{{ info.descriptionTitle }}:</label>
+        <textarea name="decription" placeholder="{{ info.descriptionTitle }}..." rows="5" cols="33"></textarea>
     </div>
     <div>
         <label for="fileUpload">Прикрепить файл:</label>

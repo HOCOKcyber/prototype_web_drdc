@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from .model.requestInfo import RequestTemplate
 
 servicePageBp = Blueprint("servicePage", __name__, url_prefix="/service",
                           template_folder="templates", static_folder="static") 
@@ -8,6 +9,13 @@ servicePageBp = Blueprint("servicePage", __name__, url_prefix="/service",
 def servicePage():
     return render_template("templateServicePage.html")
 
+
 @servicePageBp.route("/support/maintenanceRequest")
-def maintenanceRequestPage():
-    return render_template("maintenanceRequest.html")
+def maintenanceRequestPage():   
+    info = RequestTemplate.MAINTENANCE.value
+    return render_template("templateRequestPage.html", info=info)
+
+@servicePageBp.route("/support/incidentRequest")
+def incidentRequestPage():   
+    info = RequestTemplate.INCIDENT.value
+    return render_template("templateRequestPage.html", info=info)
