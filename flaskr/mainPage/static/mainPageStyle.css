@@ -1,11 +1,3 @@
-body{
-    height: 100vh;
-}
-
-.fill_width{
-    width: 100%;
-}
-
 .flex_row{
     display: flex;
     flex-direction: row;
@@ -62,8 +54,4 @@ input{
 /* Контент */
 .content{
     padding: 23px 18px;
-    /* Переменная задается в html */
-    background-image: var(--bg-image);
-    width: 100%;
-    height: 100vh;
 }

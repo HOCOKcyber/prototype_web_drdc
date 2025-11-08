@@ -1,7 +1,5 @@
 
 /* Отступы длля контента */
 .content{
-    padding: 23px 0px 0px 27px;
-    height: 100vh;
-    background-image: var(--bg-image);
+    padding: 23px 0px 20px 27px;
 }

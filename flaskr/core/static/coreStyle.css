@@ -19,3 +19,13 @@
     display: grid;
     grid-template-columns: auto 1fr;
 }
+
+.content{
+  min-height: 100vh;
+  max-height: fit-content;
+  width: 100%;
+  /* Переменная задается в generalTemplate.html */
+  background-image: var(--bg-image);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
