@@ -1,0 +1,32 @@
+{% extends "templateServicePage.html" %}
+
+{% block head %}
+<link rel="stylesheet" href=" {{ url_for('servicePage.static', filename='formServiceStyle.css') }} ">
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <div>
+        <label for="work_category" >Внесение работ в расписание: </label>
+        <select name="work_category">
+            <option value="1">Категория 1</option>
+            <option value="2">Категория 2</option>
+            <option value="2">Категория 2</option>
+        </select>
+    </div>
+    <div>
+        <label for="work_object">Укажите объект работ:</label>
+        <input name="work_object" type="text" placeholder="Введите название объекта"></input>
+    </div>
+    <div>
+        <label for="work_start">Начало и завершение работ:</label>
+        <div class="date_input_wrapper">
+            C
+            <input type="date" name="work_start" /> 
+            До
+            <input type="date" name="work_end" />
+        </div>
+    </div>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

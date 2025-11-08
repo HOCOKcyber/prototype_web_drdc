@@ -23,14 +23,16 @@ form select{
 
 /* TODO Смена цвета при наведении на option */
 
-/* Textarea */
-form textarea{
+form textarea,
+form input[type="text"],
+form input[type="date"]{
     padding: 11px 17px;
     border-radius: 4px;
     border: 3px solid var(--dark-blue);
     background-color: var(--main-color);
 }
 
+/* Кнопка  */
 form button{
     border: none;
     padding: 11px 30px;
@@ -42,4 +44,12 @@ form button{
 
 form button:hover{
     background-color: var(--clickable-color-hover);
+}
+
+/* Контейнер для красивого вывода начала и конца даты */
+form .date_input_wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 20px;
 }
