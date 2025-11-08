@@ -18,3 +18,7 @@ def maintenanceRequestPage():
 def incidentRequestPage():   
     info = RequestTemplate.INCIDENT.value
     return render_template("templateRequestPage.html", info=info)
+
+@servicePageBp.route("/support/management/workSchedulePage")
+def workSchedulePage():
+    return render_template("workSchedulePage.html")
