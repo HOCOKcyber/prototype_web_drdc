@@ -89,6 +89,7 @@
 }
 
 /* Если пользователь на нужной странице */
+#content_navigation .sub_menu_btn .active,
 #content_navigation .sub_menu .active{
     text-decoration: underline;
 }

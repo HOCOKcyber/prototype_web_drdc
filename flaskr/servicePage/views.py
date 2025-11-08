@@ -9,13 +9,12 @@ servicePageBp = Blueprint("servicePage", __name__, url_prefix="/service",
 def servicePage():
     return render_template("templateServicePage.html")
 
-
-@servicePageBp.route("/support/maintenanceRequest")
+@servicePageBp.route("/support/management/maintenanceRequest")
 def maintenanceRequestPage():   
     info = RequestTemplate.MAINTENANCE.value
     return render_template("templateRequestPage.html", info=info)
 
-@servicePageBp.route("/support/incidentRequest")
+@servicePageBp.route("/support/management/incidentRequest")
 def incidentRequestPage():   
     info = RequestTemplate.INCIDENT.value
     return render_template("templateRequestPage.html", info=info)
