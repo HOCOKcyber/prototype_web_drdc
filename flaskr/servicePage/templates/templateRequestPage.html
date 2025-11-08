@@ -19,10 +19,18 @@
         <label for="decription">{{ info.descriptionTitle }}:</label>
         <textarea name="decription" placeholder="{{ info.descriptionTitle }}..." rows="5" cols="33"></textarea>
     </div>
-    <div>
-        <label for="fileUpload">Прикрепить файл:</label>
-        <input type="file" id="fileUpload" name="fileUpload" multiple />
+    <div class="wrapper_file_uploader">
+        <label for="file_upload" style="--file-icon: url({{ url_for('static', filename='img/fileIcon.svg') }})">Прикрепить файл</label>
+        <input type="file" id="file_upload" name="file_upload" multiple />
+        <div id="file_list">
+        </div>
     </div>
     <button type="submit">Отправить</button>
 </form>
+
 {% endblock %}
+
+
+{% block generalScript %}
+    <script src="{{ url_for('servicePage.static', filename='fileLoader.js') }}"></script>
+{% endblock %} 

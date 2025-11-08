@@ -1,3 +1,8 @@
+/* TODO Смена цвета при наведении на option */
+*{
+    --delete-btn: #F56A6A
+}
+
 /* Колонка для всей формы + отступы */
 form,
 form div{
@@ -21,8 +26,6 @@ form select{
     background-color: var(--clickable-color);
 }
 
-/* TODO Смена цвета при наведении на option */
-
 form textarea,
 form input[type="text"],
 form input[type="date"]{
@@ -31,6 +34,46 @@ form input[type="date"]{
     border: 3px solid var(--dark-blue);
     background-color: var(--main-color);
 }
+
+/* Для файлов */
+form input[type="file"]{
+    display: none;
+}
+
+form .wrapper_file_uploader > label{
+    background-color: var(--clickable-color);
+    padding: 15px 20px 15px 40px;
+    border-radius: 4px;
+    font-size: 16px;
+
+    /* Картинка вставляется в templateRequestPage.html */
+    background-image: var(--file-icon);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+
+    transition: all 0.3s;
+}
+
+form .wrapper_file_uploader .file_item_wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+form .wrapper_file_uploader .file_item_wrapper span{
+    width: 200px;
+    min-width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+form .wrapper_file_uploader .delete_file{
+    background-color: var(--delete-btn);
+    padding: 2px 8px;
+}
+
 
 /* Кнопка  */
 form button{
@@ -42,7 +85,8 @@ form button{
     transition: all 0.3s;
 }
 
-form button:hover{
+form button:hover,
+form .wrapper_file_uploader > label:hover{
     background-color: var(--clickable-color-hover);
 }
 
