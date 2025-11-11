@@ -14,3 +14,7 @@ def submittedTask():
 @mainPageBp.route("/currentTask")
 def currentTask():
     return render_template("currentTask.html")
+
+@mainPageBp.route('/completedTask')
+def completedTask():
+    return render_template('completedTask.html')

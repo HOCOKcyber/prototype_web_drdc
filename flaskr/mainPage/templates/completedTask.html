@@ -1,0 +1,152 @@
+{% extends "templateMainPage.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('mainPage.static', filename='completedTaskStyle.css') }}">
+<title>Выполненные задачи</title>
+{% endblock %}
+
+{% block content %}
+<div class="completed-tasks">
+    <div class="task-block">
+        <div class="task-icon">
+            <img src="{{ url_for('mainPage.static', filename='img/task-icon.svg') }}" alt="Иконка задачи" class="task-icon-img">
+        </div>
+        <div class="task-inner">Задача 1</div>
+        <div class="task-right">
+            <span class="completion-text">Дата завершения</span>
+            <div class="dropdown-arrow">▼</div>
+        </div>
+    </div>
+    <div class="task-description">
+        <div class="description-content">
+            <h3>Описание задачи 1</h3>
+            <p>Подробное описание выполненной задачи. Здесь может быть информация о том, что было сделано, какие результаты достигнуты и т.д.</p>
+            <div class="description-details">
+                <div class="detail-item">
+                    <span class="detail-label">Статус:</span>
+                    <span class="detail-value completed">Выполнено</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Исполнитель:</span>
+                    <span class="detail-value">Иван Иванов</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Срок:</span>
+                    <span class="detail-value">10.11.2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="task-block">
+        <div class="task-icon">
+            <img src="{{ url_for('mainPage.static', filename='img/task-icon.svg') }}" alt="Иконка задачи" class="task-icon-img">
+        </div>
+        <div class="task-inner">Задача 2</div>
+        <div class="task-right">
+            <span class="completion-text">Дата завершения</span>
+            <div class="dropdown-arrow">▼</div>
+        </div>
+    </div>
+    <div class="task-description">
+        <div class="description-content">
+            <h3>Описание задачи 2</h3>
+            <p>Подробное описание выполненной задачи. Здесь может быть информация о том, что было сделано, какие результаты достигнуты и т.д.</p>
+            <div class="description-details">
+                <div class="detail-item">
+                    <span class="detail-label">Статус:</span>
+                    <span class="detail-value completed">Выполнено</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Исполнитель:</span>
+                    <span class="detail-value">Петр Петров</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Срок:</span>
+                    <span class="detail-value">04.02.2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="task-block">
+        <div class="task-icon">
+            <img src="{{ url_for('mainPage.static', filename='img/task-icon.svg') }}" alt="Иконка задачи" class="task-icon-img">
+        </div>
+        <div class="task-inner">Задача 3</div>
+        <div class="task-right">
+            <span class="completion-text">Дата завершения</span>
+            <div class="dropdown-arrow">▼</div>
+        </div>
+    </div>
+    <div class="task-description">
+        <div class="description-content">
+            <h3>Описание задачи 3</h3>
+            <p>Подробное описание выполненной задачи. Здесь может быть информация о том, что было сделано, какие результаты достигнуты и т.д.</p>
+            <div class="description-details">
+                <div class="detail-item">
+                    <span class="detail-label">Статус:</span>
+                    <span class="detail-value completed">Выполнено</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Исполнитель:</span>
+                    <span class="detail-value">Мария Сидорова</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Срок:</span>
+                    <span class="detail-value">10.09.2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="task-block">
+        <div class="task-icon">
+            <img src="{{ url_for('mainPage.static', filename='img/task-icon.svg') }}" alt="Иконка задачи" class="task-icon-img">
+        </div>
+        <div class="task-inner">Задача 4</div>
+        <div class="task-right">
+            <span class="completion-text">Дата завершения</span>
+            <div class="dropdown-arrow">▼</div>
+        </div>
+    </div>
+    <div class="task-description">
+        <div class="description-content">
+            <h3>Описание задачи 4</h3>
+            <p>Подробное описание выполненной задачи. Здесь может быть информация о том, что было сделано, какие результаты достигнуты и т.д.</p>
+            <div class="description-details">
+                <div class="detail-item">
+                    <span class="detail-label">Статус:</span>
+                    <span class="detail-value completed">Выполнено</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Исполнитель:</span>
+                    <span class="detail-value">Алексей Козлов</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Срок:</span>
+                    <span class="detail-value">05.10.2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const taskBlocks = document.querySelectorAll('.task-block');
+    
+    taskBlocks.forEach(block => {
+        const arrow = block.querySelector('.dropdown-arrow');
+        const description = block.nextElementSibling;
+        
+        arrow.addEventListener('click', function() {
+            document.querySelectorAll('.task-description').forEach(desc => {
+                if (desc !== description) {
+                    desc.classList.remove('active');
+                    desc.previousElementSibling.querySelector('.dropdown-arrow').classList.remove('active');
+                }
+            });
+            description.classList.toggle('active');
+            arrow.classList.toggle('active');
+        });
+    });
+});
+</script>
+{% endblock %}
